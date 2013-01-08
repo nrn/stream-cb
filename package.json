@@ -1,0 +1,12 @@
+{ "name": "stream-cb"
+, "version": "0.0.1"
+, "author": "Nick Niemeir <nick.niemeir@gmail.com> (http://nrn.io)"
+, "main": "stream-cb.js"
+, "scripts": { "test": "for f in ./t/*.js; do node $f; done" }
+, "devDependencies": { "tape": "*" }
+, "engines": { "node": ">0.6" }
+, "repository":
+  { "type": "git"
+  , "url": "git://github.com/nrn/stream-cb.git"
+  }
+}
