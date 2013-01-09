@@ -24,6 +24,9 @@ function toStream (cb, encoding) {
   str.end = function () {
     cb(null, data)
   }
+  str.destroy = function () {
+    str.writable = false
+  }
 
   return str
 }

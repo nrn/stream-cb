@@ -1,6 +1,7 @@
 var test = require('tape')
   , Stream = require('stream')
   , streamCb = require('../stream-cb')
+  , fs = require('fs')
 
 test('streamCb', function (t) {
   var cb = function (e, r) {
@@ -39,7 +40,11 @@ test('streamCb', function (t) {
 
   var ct2 = streamCb(str())(null, 'foo')
 
-  var ct3 = streamCb.toCb(str())(null, 'foo')
+  try{
+    var ct3 = streamCb.toCb(str())(new Error('bar'))
+  } catch (e) {
+    t.equal(e.toString(), 'Error: bar', 'throws')
+  }
 
   var noend = str()
   var ct4 = streamCb.toCb(noend, true)(null, 'foo')

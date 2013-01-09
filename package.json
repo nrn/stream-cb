@@ -1,5 +1,5 @@
 { "name": "stream-cb"
-, "version": "0.0.1"
+, "version": "0.0.2"
 , "author": "Nick Niemeir <nick.niemeir@gmail.com> (http://nrn.io)"
 , "main": "stream-cb.js"
 , "scripts": { "test": "for f in ./t/*.js; do node $f; done" }
