@@ -20,8 +20,10 @@ function toStream (cb, encoding) {
   str.on('error', cb)
   str.write = function (chunk) {
     data += decoder.write(chunk)
+    return true
   }
-  str.end = function () {
+  str.end = function (chunk) {
+    if (chunk) str.write(chunk)
     cb(null, data)
   }
   str.destroy = function () {
