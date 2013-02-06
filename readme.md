@@ -1,7 +1,14 @@
 #streamCb
 
-Switch between node's two most popular interfaces, streams and
+Convert between node's two most popular interfaces, streams and
 (err, result) callbacks.
+
+They are both setup to handle data in the future and do something
+responsible with an error if one occurs. The fundamental difference
+is that streams can handle chunks at a time, where as callbacks
+have to handle the whole thing at once. But when interfacing with a
+module that deals with everything at once we still want to use our
+streaming magic.
 
 ```javascript
 var streamCb = require('stream-cb')
