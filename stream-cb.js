@@ -13,21 +13,16 @@ function streamCb (cbst) {
 
 function toStream (cb, encoding) {
   if (typeof cb.pipe === 'function') return cb
-  var str = new Stream
+  var str = new Stream.Writable
     , data = ''
-    , decoder = new StringDecoder(encoding)
-  str.writable = true
   str.on('error', cb)
-  str.write = function (chunk) {
-    data += decoder.write(chunk)
-    return true
+  str._write = function (chunk, encoding, cb) {
+    data += chunk
+    cb()
   }
   str.end = function (chunk) {
     if (chunk) str.write(chunk)
     cb(null, data)
-  }
-  str.destroy = function () {
-    str.writable = false
   }
 
   return str

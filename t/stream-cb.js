@@ -21,7 +21,7 @@ test('streamCb', function (t) {
     return st
   }
 
-  t.plan(8)
+  t.plan(9)
 
   var st1 = streamCb(cb)
   st1.write('asdf')
@@ -31,6 +31,10 @@ test('streamCb', function (t) {
   st2.write('as')
   st2.write('df')
   st2.end()
+
+  var st3 = streamCb.toStream(cb)
+  st3.write('as')
+  st3.end('df')
 
   var ct1 = streamCb.toCb(cb)(null, 'asdf')
 
