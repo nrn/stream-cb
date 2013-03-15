@@ -38,9 +38,9 @@ test('streamCb', function (t) {
 
   var ct1 = streamCb.toCb(cb)(null, 'asdf')
 
-  var st3 = streamCb.toStream(str())
-  st3.write('foo')
-  st3.end()
+  var st4 = streamCb.toStream(str())
+  st4.write('foo')
+  st4.end()
 
   var ct2 = streamCb(str())(null, 'foo')
 

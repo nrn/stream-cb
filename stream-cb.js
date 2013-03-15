@@ -14,15 +14,15 @@ function streamCb (cbst) {
 function toStream (cb, encoding) {
   if (typeof cb.pipe === 'function') return cb
   var str = new Stream.Writable
-    , data = ''
+    , data = []
   str.on('error', cb)
   str._write = function (chunk, encoding, cb) {
-    data += chunk
+    data.push(chunk)
     cb()
   }
   str.end = function (chunk) {
     if (chunk) str.write(chunk)
-    cb(null, data)
+    cb(null, Buffer.concat(data).toString())
   }
 
   return str
