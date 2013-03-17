@@ -6,7 +6,7 @@
 , "main": "stream-cb.js"
 , "scripts": { "test": "for f in ./t/*.js; do node $f; done" }
 , "devDependencies": { "tape": "*" }
-, "engines": { "node": ">0.10" }
+, "engines": { "node": ">=0.10" }
 , "testling":
   { "files": [ "t/*.js" ]
   , "browsers":
