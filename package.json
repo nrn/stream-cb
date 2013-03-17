@@ -7,6 +7,16 @@
 , "scripts": { "test": "for f in ./t/*.js; do node $f; done" }
 , "devDependencies": { "tape": "*" }
 , "engines": { "node": ">0.10" }
+, "testling":
+  { "files": [ "t/*.js" ]
+  , "browsers":
+    { "chrome": [ "25", "canary" ]
+    , "firefox": [ "19", "nightly" ]
+    , "safari": [ "5.1" ]
+    , "ie": [ "10" ]
+    , "opera": [ "12", "next" ]
+    }
+  }
 , "repository":
   { "type": "git"
   , "url": "git://github.com/nrn/stream-cb.git"
