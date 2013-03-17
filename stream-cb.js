@@ -1,5 +1,4 @@
 var Stream = require('stream')
-  , StringDecoder = require('string_decoder').StringDecoder
 
 module.exports = streamCb
 streamCb.toCb = toCb

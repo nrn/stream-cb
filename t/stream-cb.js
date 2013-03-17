@@ -1,7 +1,6 @@
 var test = require('tape')
   , Stream = require('stream')
   , streamCb = require('../stream-cb')
-  , fs = require('fs')
 
 test('streamCb', function (t) {
   var cb = function (e, r) {
@@ -21,7 +20,7 @@ test('streamCb', function (t) {
     return st
   }
 
-  t.plan(9)
+  t.plan(8)
 
   var st1 = streamCb(cb)
   st1.write('asdf')
@@ -53,10 +52,6 @@ test('streamCb', function (t) {
   var noend = str()
   var ct4 = streamCb.toCb(noend, true)(null, 'foo')
   noend.end()
-
-  fs.createReadStream(__dirname + '/test.json').pipe(streamCb(function (e, body) {
-    t.same(body, '{ "asdf": 1234 }\n', 'Read file test')
-  }))
 
 })
 
