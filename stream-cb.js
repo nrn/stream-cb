@@ -1,5 +1,7 @@
 var Stream = require('stream')
 
+if (!Stream.transform) Stream = require('readable-stream')
+
 module.exports = streamCb
 streamCb.toCb = toCb
 streamCb.toStream = toStream

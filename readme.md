@@ -10,7 +10,7 @@ have to handle the whole thing at once. But when interfacing with a
 module that deals with everything at once we still want to use our
 streaming magic.
 
-[![browser support](http://ci.testling.com/nrn/stream-cb.png)](http://ci.testling.com/nrn/stream-cb)
+[![browser support](https://ci.testling.com/nrn/stream-cb.png)](https://ci.testling.com/nrn/stream-cb)
 
 ```javascript
 var streamCb = require('stream-cb')
