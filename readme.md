@@ -22,7 +22,7 @@ var streamCb = require('stream-cb')
 
 if ? is a stream, call .toCb(?, opt)
 if ? is a function, call .toStream(?, opt)
-Otherwise throw an error.
+Otherwise return undefined.
 
 ##streamCb.toStream(cb, encoding)
 
