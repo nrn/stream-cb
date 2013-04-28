@@ -1,7 +1,5 @@
 var Stream = require('stream')
 
-if (!Stream.transform) Stream = require('readable-stream')
-
 module.exports = streamCb
 streamCb.toCb = toCb
 streamCb.toStream = toStream
@@ -9,7 +7,6 @@ streamCb.toStream = toStream
 function streamCb (cbst) {
   if (typeof cbst.pipe === 'function') return toCb(cbst)
   else if (typeof cbst === 'function') return toStream(cbst)
-  else throw new Error('stream-cb takes a stream or function')
 }
 
 function toStream (cb, encoding) {
@@ -23,7 +20,7 @@ function toStream (cb, encoding) {
   }
   str.end = function (chunk) {
     if (chunk) str.write(chunk)
-    cb(null, Buffer.concat(data).toString())
+    cb(null, Buffer.concat(data).toString(encoding))
   }
 
   return str

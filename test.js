@@ -1,6 +1,6 @@
 var test = require('tape')
   , Stream = require('stream')
-  , streamCb = require('../stream-cb')
+  , streamCb = require('./index')
 
 test('streamCb', function (t) {
   var cb = function (e, r) {
