@@ -12,6 +12,8 @@ streaming magic.
 
 [![browser support](https://ci.testling.com/nrn/stream-cb.png)](https://ci.testling.com/nrn/stream-cb)
 
+note: Uses streams2, not currently working in the browser.
+
 ```javascript
 var streamCb = require('stream-cb')
 ```
