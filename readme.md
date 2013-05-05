@@ -76,7 +76,7 @@ function (opts, cb) {
 }
 ```
 
-# LICENSE
+##License (MIT)
 
 Copyright (c) 2013 Nick Niemeir <nick.niemeir@gmail.com>
 
