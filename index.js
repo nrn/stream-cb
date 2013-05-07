@@ -1,4 +1,7 @@
-var Stream = require('stream')
+// stream-cb, (c) 2013 Nick Niemeir <nick.niemeir@gmail.com>
+// MIT licensed. https://github.com/nrn/stream-cb
+
+var stream = require('stream')
 
 module.exports = streamCb
 streamCb.toCb = toCb
@@ -6,12 +9,12 @@ streamCb.toStream = toStream
 
 function streamCb (cbst) {
   if (typeof cbst.pipe === 'function') return toCb(cbst)
-  else if (typeof cbst === 'function') return toStream(cbst)
+  if (typeof cbst === 'function') return toStream(cbst)
 }
 
 function toStream (cb, encoding) {
   if (typeof cb.pipe === 'function') return cb
-  var str = new Stream.Writable
+  var str = new stream.Writable
     , data = []
   str.on('error', cb)
   str._write = function (chunk, encoding, cb) {
