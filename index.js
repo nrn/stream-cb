@@ -3,6 +3,8 @@
 
 var stream = require('stream')
 
+if (!stream.Writable) stream = require('readable-stream')
+
 module.exports = streamCb
 streamCb.toCb = toCb
 streamCb.toStream = toStream
