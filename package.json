@@ -1,12 +1,12 @@
 { "name": "stream-cb"
-, "version": "0.1.1"
+, "version": "1.0.0"
 , "description": "Wrap streams in callbacks and callbacks in streams."
 , "keywords": [ "callback", "stream" ]
 , "author": "Nick Niemeir <nick.niemeir@gmail.com> (http://nrn.io)"
 , "scripts": { "test": "node test.js" }
 , "dependencies": { "readable-stream": "~1.0" }
 , "devDependencies": { "tape": "~0.3" }
-, "engines": { "node": ">=0.10" }
+, "engines": { "node": ">=0.8" }
 , "testling":
   { "files": [ "test.js" ]
   , "browsers":
