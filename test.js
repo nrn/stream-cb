@@ -20,7 +20,7 @@ test('streamCb', function (t) {
     return st
   }
 
-  t.plan(8)
+  t.plan(9)
 
   var st1 = streamCb(cb)
   st1.write('asdf')
@@ -52,6 +52,13 @@ test('streamCb', function (t) {
   var noend = str()
   var ct4 = streamCb.toCb(noend, true)(null, 'foo')
   noend.end()
+
+  var tryThis = streamCb(function (e, r) {
+    t.equal(this.thing, 123, 'this value correct')
+  })
+  tryThis.thing = 123
+
+  tryThis.end()
 
 })
 

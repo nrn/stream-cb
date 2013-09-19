@@ -1,5 +1,5 @@
 { "name": "stream-cb"
-, "version": "1.0.0"
+, "version": "1.1.0"
 , "description": "Wrap streams in callbacks and callbacks in streams."
 , "keywords": [ "callback", "stream" ]
 , "author": "Nick Niemeir <nick.niemeir@gmail.com> (http://nrn.io)"

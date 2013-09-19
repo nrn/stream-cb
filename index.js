@@ -19,13 +19,13 @@ function toStream (cb, encoding) {
   var str = new stream.Writable
     , data = []
   str.on('error', cb)
-  str._write = function (chunk, encoding, cb) {
+  str._write = function (chunk, encoding, done) {
     data.push(chunk)
-    cb()
+    done()
   }
   str.end = function (chunk) {
     if (chunk) str.write(chunk)
-    cb(null, Buffer.concat(data).toString(encoding))
+    cb.call(this, null, Buffer.concat(data).toString(encoding))
   }
 
   return str
